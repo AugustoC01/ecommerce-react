@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    width: 100%;
+    background-color: #7D3C98;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-ecom {
+    margin-right: 50px;
+    color: #ffff;
+}
+
+.btn-nav {
+    text-decoration: none;
+    margin: 5px;
+    text-transform: uppercase;
+    color: #4BF80F;
+}
+
+.btn-nav:hover {
+    color: black;
+}
+
+.titulo-ecom, .btn-nav, .cartImg {
+    cursor: pointer;
+}
