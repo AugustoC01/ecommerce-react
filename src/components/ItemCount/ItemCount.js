@@ -14,6 +14,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
     return(
         <div className='item-count'>
+            <h1>Contador</h1>
             <div className='counter'>
                 <button className='btn-incr' onClick={decrement}>-</button>
                 <h3>{count}</h3>
