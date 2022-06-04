@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
-* {
-    font-family: 'Montserrat', sans-serif;
-}
-
 nav {
     width: 100%;
     background-color: #7D3C98;
@@ -13,7 +7,7 @@ nav {
     justify-content: center;
 }
 
-.titulo-ecom {
+.title-ecom {
     margin-right: 50px;
     color: #ffff;
 }
@@ -29,6 +23,6 @@ nav {
     color: black;
 }
 
-.titulo-ecom, .btn-nav, .cartImg {
+.title-ecom, .btn-nav, .cartImg {
     cursor: pointer;
 }
