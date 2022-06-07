@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemCount from "./components/ItemCount/ItemCount"
@@ -11,9 +12,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer greeting='Bienvenido a nuestro sitio!'/>
-      <ItemCount initial={0} stock={10} onAdd={handleAdd}/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer greeting='Bienvenido a nuestro sitio!'/>}/>
+          {/* <ItemCount initial={0} stock={10} onAdd={handleAdd}/> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
