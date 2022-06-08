@@ -2,7 +2,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount"
+// import ItemCount from "./components/ItemCount/ItemCount"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
 
@@ -16,8 +17,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<ItemListContainer greeting='Bienvenido a nuestro sitio!'/>}/>
-          {/* <ItemCount initial={0} stock={10} onAdd={handleAdd}/> */}
+          <Route path='/category/:categoryId' element={<ItemListContainer greeting='Bienvenido a nuestro sitio!'/>}/>
+          <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
         </Routes>
+        {/* <ItemCount initial={0} stock={10} onAdd={handleAdd}/> */}
       </BrowserRouter>
     </div>
   );

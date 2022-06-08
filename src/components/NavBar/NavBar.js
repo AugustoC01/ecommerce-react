@@ -1,16 +1,19 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav>
-      <h3 className='title-ecom'>Titulo Ecommerce</h3>
-      <a className='btn-nav' href='./'>Monitores</a>
-      <a className='btn-nav' href='./'>Teclados</a>
-      <a className='btn-nav' href='./'>Keycaps</a>
-      <a className='btn-nav' href='./'>Mouse</a>
-      <a className='btn-nav' href='./'>Pads</a>
-      <a className='btn-nav' href='./'>Auriculares</a>
+      <Link to='/'>
+        <h3 className='title-ecom'>Titulo Ecommerce</h3>
+      </Link>
+      <Link to='/category/monitor' className='btn-nav'>Monitores</Link>
+      <Link to='/category/teclado' className='btn-nav'>Teclados</Link>
+      <Link to='/category/keycaps' className='btn-nav'>Keycaps</Link>
+      <Link to='/category/mouse' className='btn-nav'>Mouse</Link>
+      <Link to='/category/mousepad' className='btn-nav'>Pads</Link>
+      <Link to='/category/auricular' className='btn-nav'>Auriculares</Link>
       <CartWidget />
     </nav>
   );

@@ -19,10 +19,20 @@ const products = [
     // { id: '18', name: 'Jbl Quantum Q600', price: 34000, category: 'auricular', img: 'https://delta.com.ar/media/catalog/product/cache/03229c62aec18bc8968e7effca99b533/n/u/nuevo_proyecto_3_26_1.jpg', stock: 20, description: 'Iluminacion RGB, conectividad inalambrica. Duración de reproducción musical: 14 horas'},
 ]
 
-export const getProducts = () => {
+export const getProducts = (categoryId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products)
+            !categoryId
+                ? resolve(products)
+                : resolve(products.filter(prod => prod.category === categoryId))
+        }, 2000)
+    })
+}
+
+export const getProductById = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === id))
         }, 2000)
     })
 }
