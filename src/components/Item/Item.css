@@ -1,21 +1,43 @@
-li {
-    width: 50vh;
+.Item-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 15px var(--violet-color);
 }
 
-li h1 {
+.Item-container:hover {
+    box-shadow: 5px 5px 15px var(--green-color);
+}
+
+.Item-info {
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Item-img {
+    object-fit: contain;
+    height: 150px;
+    width: 200px;
+}
+
+.Item-name {
     font-size: 2.5vh;
-    margin: 0;
 }
 
-li h3 {
+.Item-prc {
     font-size: 3vh;
-    margin: 0;
 }
 
-li img {
-    width: 80%;
+.Item-btn {
+    color: #FFFFFF;
+    padding: 0.3rem;
+    border: solid var(--violet-color);
+    background-color: var(--violet-color);
+    border-radius: 30px;
 }

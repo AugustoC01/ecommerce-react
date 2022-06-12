@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
 nav {
+    height: 10vh;
     width: 100%;
-    background-color: #7D3C98;
+    background-color: var(--violet-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -12,21 +11,27 @@ nav {
 .title-ecom {
     margin-right: 50px;
     color: #ffff;
+    text-transform: uppercase;
 }
 
 .btn-nav {
     margin: 5px;
+    font-size: 1em;
     text-transform: uppercase;
-    color: #4BF80F;
-    border-width: inherit;
-    background: none;
+    color: var(--green-color);
 }
 
-.btn-nav:hover {
-    color: black;
+.btn-nav-act {
+    margin: 10px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.btn-nav:hover, .btn-nav-act:hover {
+    color: #000000;
 }
 
 .title-ecom, .btn-nav, .cartImg {
     cursor: pointer;
-    text-decoration: none;
 }

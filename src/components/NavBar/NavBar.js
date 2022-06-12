@@ -1,19 +1,19 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav>
       <Link to='/'>
-        <h3 className='title-ecom'>Titulo Ecommerce</h3>
+        <h3 className='title-ecom'>Aincrad System</h3>
       </Link>
-      <Link to='/category/monitor' className='btn-nav'>Monitores</Link>
-      <Link to='/category/teclado' className='btn-nav'>Teclados</Link>
-      <Link to='/category/keycaps' className='btn-nav'>Keycaps</Link>
-      <Link to='/category/mouse' className='btn-nav'>Mouse</Link>
-      <Link to='/category/mousepad' className='btn-nav'>Pads</Link>
-      <Link to='/category/auricular' className='btn-nav'>Auriculares</Link>
+      <NavLink to='/category/monitor' className={({ isActive }) => isActive ? 'btn-nav-act' : 'btn-nav'}>Monitores</NavLink>
+      <NavLink to='/category/teclado' className={({ isActive }) => isActive ? 'btn-nav-act' : 'btn-nav'}>Teclados</NavLink>
+      <NavLink to='/category/keycaps' className={({ isActive }) => isActive ? 'btn-nav-act' : 'btn-nav'}>Keycaps</NavLink>
+      <NavLink to='/category/mouse' className={({ isActive }) => isActive ? 'btn-nav-act' : 'btn-nav'}>Mouse</NavLink>
+      <NavLink to='/category/mousepad' className={({ isActive }) => isActive ? 'btn-nav-act' : 'btn-nav'}>Pads</NavLink>
+      <NavLink to='/category/auricular' className={({ isActive }) => isActive ? 'btn-nav-act' : 'btn-nav'}>Auriculares</NavLink>
       <CartWidget />
     </nav>
   );

@@ -4,20 +4,28 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
-
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const { categoryId } = useParams()
   useEffect(() => {
+    setLoading(true)
+    
     getProducts(categoryId).then(response => {
       setProducts(response)
-    })
+    }).finally(() => {
+        setLoading(false)})
   }, [categoryId])
 
+  if(loading){
+    return(
+      <div className="loading-spinner"> </div>
+    )
+  }
+
   return(
-    <div>
-      <h1 className="greeting">{props.greeting}</h1>
+    <div className="container">
       {products.length > 0 
         ? <ItemList products={products}/>
         : <h1>No hay productos</h1>}

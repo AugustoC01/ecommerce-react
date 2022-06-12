@@ -2,26 +2,24 @@
     text-transform: uppercase;
 }
 
-.item-count {
-    width: 35vh;
+.item-count-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    margin-left: 300px;
-}
-
-.item-count h1 {
-    margin: 0;
-    margin-bottom: 15px;
+    gap: 0.5rem;
 }
 
 .counter {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: center;
 }
 
-.counter h3 {
-    margin: 0;
-}
+.btn-incr, .btn-addCart {
+    color: #FFFFFF;
+    padding: 0.3rem;
+    border: solid var(--violet-color);
+    background-color: var(--violet-color);
+    border-radius: 30px;
+ }
