@@ -1,4 +1,4 @@
-.item-count .btn-addCart {
+.item-count .btn {
     text-transform: uppercase;
 }
 
@@ -16,7 +16,7 @@
     justify-content: center;
 }
 
-.btn-incr, .btn-addCart {
+.btn {
     color: #FFFFFF;
     padding: 0.3rem;
     border: solid var(--violet-color);

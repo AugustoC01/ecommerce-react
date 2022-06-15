@@ -1,7 +1,16 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useContext } from 'react';
+import CartContext from '../../Context/CartContext';
 
-const ItemDetail = ({ id, name, price, img, description }) => {
+const ItemDetail = ({ id, name, price, img, description, stock }) => {
+
+    const { addItem } = useContext(CartContext)
+
+    const handleAdd = (quantity) => {
+        console.log(`se agregaron ${quantity} ${name}`)
+    }
+
     return(
         <div className='container'>
             <div className='img-container'>
@@ -11,7 +20,7 @@ const ItemDetail = ({ id, name, price, img, description }) => {
                 <h2 className='item-name'>{name}</h2>
                 <h2 className='item-price'>${price}</h2>
                 <p className='item-desc'>{description}</p>
-                <ItemCount initial={0} stock={10} />
+                <ItemCount stock={stock} Add={handleAdd}/>
             </div>
         </div>
     )
