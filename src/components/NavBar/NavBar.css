@@ -8,8 +8,11 @@ nav {
     justify-content: center;
 }
 
+.categories {
+    width: 100%;
+}
+
 .title-ecom {
-    margin-right: 50px;
     color: #ffff;
     text-transform: uppercase;
 }

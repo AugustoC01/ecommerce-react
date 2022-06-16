@@ -8,10 +8,10 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
     const { addItem } = useContext(CartContext)
 
     const handleAdd = (quantity) => {
-        console.log(`se agregaron ${quantity} ${name}`)
+        addItem({ id, name, price, quantity })
     }
 
-    return(
+    return(                                                                                 
         <div className='container'>
             <div className='img-container'>
                 <img src={img} alt={name} className='item-img'/>

@@ -1,4 +1,8 @@
+.cart-container {
+    display: flex;
+
+}
+
 .cartImg {
     width: 5vh;
-    margin-left: 50px;
 }
