@@ -1,8 +1,21 @@
 .cart-container {
     display: flex;
-
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
-.cartImg {
-    width: 5vh;
+.cart-container:hover {
+    border: solid 0.2rem var(--green-color);
+    border-radius: 1.5rem;
+    box-shadow: 5px 5px 15px var(--green-color);
+}
+
+.cart-img {
+    width: 4vh;
+}
+
+.cart-count {
+    color: #FFFFFF;
+    font-size: 1.4rem;
 }

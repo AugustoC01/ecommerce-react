@@ -7,9 +7,9 @@ const CartWidget = () => {
   const { getItemsQuantity } = useContext(CartContext)
 
   return( 
-    <div className="cart-container">
-      <img src="/images/cart.png" alt="cartLogo" className="cartImg" />
-      <h1 className="cartCount">{getItemsQuantity()}</h1>
+    <div className='cart-container'>
+      <img src="/images/cart.png" alt="cartLogo" className='cart-img' />
+      <h1 className='cart-count'>{getItemsQuantity()}</h1>
     </div>
   )
 };

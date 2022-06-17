@@ -3,13 +3,13 @@ nav {
     width: 100%;
     background-color: var(--violet-color);
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .categories {
-    width: 100%;
+    display: flex;
+    gap: 1rem;
 }
 
 .title-ecom {
@@ -37,4 +37,14 @@ nav {
 
 .title-ecom, .btn-nav, .cartImg {
     cursor: pointer;
+}
+
+.link-cart {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 0.3rem;
+    border: solid var(--violet-color);
+    background-color: var(--violet-color);
+    border-radius: 30px;
+    margin: auto;
 }

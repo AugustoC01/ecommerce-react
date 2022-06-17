@@ -1,40 +1,38 @@
-.Item-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    box-shadow: 5px 5px 15px var(--violet-color);
-}
-
-.Item-container:hover {
-    box-shadow: 5px 5px 15px var(--green-color);
-}
-
-.Item-info {
-    height: 8rem;
-    width: 100%;
+.card-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 15px var(--violet-color);
 }
 
-.Item-img {
+.card-container:hover {
+    box-shadow: 5px 5px 15px var(--green-color);
+}
+
+.card-info {
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-img {
+    height: 10rem;
+    width: 15rem;
     object-fit: contain;
-    height: 150px;
-    width: 200px;
 }
 
-.Item-name {
+.card-name {
     font-size: 2.5vh;
 }
 
-.Item-prc {
+.card-prc {
     font-size: 3vh;
 }
 
-.Item-btn {
+.card-btn {
     color: #FFFFFF;
     padding: 0.3rem;
     border: solid var(--violet-color);
