@@ -5,6 +5,10 @@
     padding: 0.5rem;
 }
 
+.hidden-container {
+    display: none;
+}
+
 .cart-container:hover {
     border: solid 0.2rem var(--green-color);
     border-radius: 1.5rem;

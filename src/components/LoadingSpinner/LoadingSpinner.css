@@ -1,0 +1,25 @@
+.loading-spinner {
+    border: 6px solid #D5DBDB;
+    border-top-color: #7D3C98;
+    border-top-style: solid;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

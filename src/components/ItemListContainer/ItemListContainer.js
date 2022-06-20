@@ -1,8 +1,9 @@
-import "./ItemListContainer.css";
-import { getProducts } from "../../asyncmock";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemList from "../ItemList/ItemList";
+import './ItemListContainer.css';
+import { getProducts } from '../../asyncmock';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemList from '../ItemList/ItemList';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([])
@@ -18,18 +19,13 @@ const ItemListContainer = (props) => {
         setLoading(false)})
   }, [categoryId])
 
-  if(loading){
-    return(
-      <div className="loading-spinner"> </div>
-    )
-  }
+  if(loading) return <LoadingSpinner />
 
   return(
-    <div className="container">
+    <div className='container'>
       {products.length > 0 
-        ? <ItemList products={products}/>
+        ? <ItemList products={products} />
         : <h1>No hay productos</h1>}
-
     </div>
   )
 }
