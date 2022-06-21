@@ -33,9 +33,6 @@
 }
 
 .card-btn {
-    color: #FFFFFF;
-    padding: 0.3rem;
-    border: solid var(--violet-color);
-    background-color: var(--violet-color);
-    border-radius: 30px;
+    text-transform: none;
+    padding: 0.1rem 0.3rem;
 }

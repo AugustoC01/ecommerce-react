@@ -1,11 +1,8 @@
-.item-count .btn {
-    text-transform: uppercase;
-}
-
-.item-count-container {
+.itemCount-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin: 1rem 3rem;
 }
 
 .counter {
@@ -16,10 +13,11 @@
     justify-content: center;
 }
 
-.btn {
-    color: #FFFFFF;
-    padding: 0.3rem;
-    border: solid var(--violet-color);
-    background-color: var(--violet-color);
-    border-radius: 30px;
- }
+.add {
+    font-size: 1rem;
+    padding: 0.1rem 0.5rem;
+}
+
+.itemCount-btn {
+    text-transform: none;
+}

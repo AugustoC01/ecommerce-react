@@ -38,13 +38,3 @@ nav {
 .title-ecom, .btn-nav, .cartImg {
     cursor: pointer;
 }
-
-.link-cart {
-    text-decoration: none;
-    color: #FFFFFF;
-    padding: 0.3rem;
-    border: solid var(--violet-color);
-    background-color: var(--violet-color);
-    border-radius: 30px;
-    margin: auto;
-}

@@ -7,22 +7,26 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   const { categoryId } = useParams()
+
   useEffect(() => {
     setLoading(true)
     
     getProducts(categoryId).then(response => {
       setProducts(response)
+    }).catch(error => {
+      console.log(error)
     }).finally(() => {
-        setLoading(false)})
+      setLoading(false)
+    })
   }, [categoryId])
 
   if(loading) return <LoadingSpinner />
-
+  
   return(
-    <div className='container'>
+    <div className='itemList-container'>
       {products.length > 0 
         ? <ItemList products={products} />
         : <h1>No hay productos</h1>}

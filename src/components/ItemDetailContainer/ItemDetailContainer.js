@@ -3,20 +3,27 @@ import { useState, useEffect } from 'react'
 import { getProductById } from '../../asyncmock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const ItemDetailContainer = () => {
-    const [ product, setProduct] = useState()
+    const [product, setProduct] = useState()
+    const [loading, setLoading] = useState(false)
 
     const { productId } = useParams()
     useEffect(() => {
+        setLoading(true)
+
         getProductById(productId).then(response => {
             setProduct(response)
+        }).finally(() => {
+            setLoading(false)
         })
     }, [])
 
+    if (loading) return <LoadingSpinner/>
+
     return(
         <>
-            {/* <h1 className='item-detail-title'>Detalles del producto</h1> */}
             <ItemDetail {...product}/>
         </>
     )

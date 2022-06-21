@@ -15,7 +15,7 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
     }
 
     return(                                                                                 
-        <div className='container'>
+        <div className='itemDetail-container'>
             <div className='img-container'>
                 <img src={img} alt={name} className='item-img'/>
             </div>
@@ -25,7 +25,7 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
                 <p className='item-desc'>{description}</p>
                 {itemAdded === 0
                     ? <ItemCount stock={stock} Add={handleAdd}/>
-                    : <Link to='/cart' className='link-cart'>Terminar compra</Link>
+                    : <Link to='/cart' className='violet-btn link-cart'>Terminar compra</Link>
                 }
             </div>
         </div>

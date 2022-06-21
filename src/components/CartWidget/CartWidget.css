@@ -1,4 +1,4 @@
-.cart-container {
+.cartWidget-container {
     display: flex;
     align-items: flex-end;
     gap: 0.5rem;
@@ -9,7 +9,7 @@
     display: none;
 }
 
-.cart-container:hover {
+.cartWidget-container:hover {
     border: solid 0.2rem var(--green-color);
     border-radius: 1.5rem;
     box-shadow: 5px 5px 15px var(--green-color);
