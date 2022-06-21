@@ -1,27 +1,34 @@
 import './ItemListContainer.css';
-import { getProducts } from '../../asyncmock';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from '../../services/firebase';
+
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const { categoryId } = useParams()
 
   useEffect(() => {
-    setLoading(true)
-    
-    getProducts(categoryId).then(response => {
-      setProducts(response)
+    const collectionRef = categoryId ? (
+        query(collection(db, 'products'), where('category', '==', categoryId) )
+    ) : (collection(db, 'products'))
+
+    getDocs(collectionRef).then(response => {
+      const firebaseProducts = response.docs.map(doc => {
+        return { id: doc.id, ...doc.data()}
+      })
+      setProducts(firebaseProducts)
     }).catch(error => {
       console.log(error)
     }).finally(() => {
       setLoading(false)
     })
-  }, [categoryId])
+  })
 
   if(loading) return <LoadingSpinner />
   
