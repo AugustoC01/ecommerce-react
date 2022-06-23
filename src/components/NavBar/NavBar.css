@@ -18,15 +18,15 @@ nav {
 }
 
 .btn-nav {
-    margin: 5px;
-    font-size: 1em;
+    margin: 0 0.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: var(--green-color);
 }
 
 .btn-nav-act {
-    margin: 10px;
-    font-size: 1.2em;
+    margin: 0 1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     color: #FFFFFF;
 }

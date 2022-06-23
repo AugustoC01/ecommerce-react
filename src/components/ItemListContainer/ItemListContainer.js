@@ -14,6 +14,8 @@ const ItemListContainer = (props) => {
   const { categoryId } = useParams()
 
   useEffect(() => {
+    setLoading(true)
+
     const collectionRef = categoryId ? (
         query(collection(db, 'products'), where('category', '==', categoryId) )
     ) : (collection(db, 'products'))
@@ -28,7 +30,7 @@ const ItemListContainer = (props) => {
     }).finally(() => {
       setLoading(false)
     })
-  })
+  }, [categoryId])
 
   if(loading) return <LoadingSpinner />
   

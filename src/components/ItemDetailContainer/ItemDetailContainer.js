@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
         }).finally(() => {
             setLoading(false)
         })
-    })
+    }, [productId])
 
     if (loading) return <LoadingSpinner/>
 

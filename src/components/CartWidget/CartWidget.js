@@ -10,10 +10,10 @@ const CartWidget = () => {
   if (itemsQuantity === 0) return
 
   return( 
-    <div className='cartWidget-container'>
+    <Link to='/cart' className='cartWidget-container'>
       <img src="/images/cart.png" alt="cartLogo" className='cart-img' />
       <h1 className='cart-count'>{itemsQuantity}</h1>
-    </div>
+    </Link>
   )
 };
 
