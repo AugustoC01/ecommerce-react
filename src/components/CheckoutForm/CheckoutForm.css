@@ -1,0 +1,34 @@
+form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  gap: 0.5rem;
+
+  text-align: left;
+}
+
+.checkout-input-container {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+.form-icon {
+  width: 2.5rem;
+}
+
+.checkout-input {
+  font-size: inherit;
+  width: 100%;
+  border: solid 0.2rem var(--violet-color);
+}
+
+.form-btn {
+  margin: auto;
+  padding: 0.3rem 1rem;
+}

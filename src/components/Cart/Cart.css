@@ -25,8 +25,9 @@
     margin: 0 0 1rem;    
 }
 
-.clear-btn {
-    margin: 2rem 0;
+.clear-btn, .checkout-btn {
+    margin: 1rem;
+    font-size: 0.8rem;
 }
 
 .empty-btn {

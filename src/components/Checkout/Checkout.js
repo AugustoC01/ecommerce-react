@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import './Checkout.css'
+import { useState, useContext } from 'react';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
+import CartContext from '../../Context/CartContext';
 
 const Checkout = () => {
-
-  const handleCheckout = (buyerData) => {
-    console.log(buyerData)
-  };
+  
 
   return (
-    <div>
+    <div className='checkout-container'>
       <h1 className='checkout-title'>Ingrese sus datos de contacto:</h1>
-      <CheckoutForm Checkout={handleCheckout}/>
+      {/* <CheckoutForm cart={cart} total={total}/> */}
+      <CheckoutForm />
     </div>
   );
 };

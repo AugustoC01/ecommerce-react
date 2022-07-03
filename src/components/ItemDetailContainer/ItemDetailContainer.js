@@ -18,7 +18,6 @@ const ItemDetailContainer = () => {
         getDoc(docRef).then(doc => {
             const firebaseProduct = { id: doc.id, ...doc.data()}
             setProduct(firebaseProduct)
-            console.log(firebaseProduct)
         }).catch(error => {
             console.log(error)
         }).finally(() => {
