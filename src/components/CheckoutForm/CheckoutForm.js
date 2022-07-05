@@ -1,23 +1,11 @@
 import './CheckoutForm.css'
 import { useState } from "react";
 
-const CheckoutForm = ({ cart, total }) => {
+const CheckoutForm = ({ AddOrder }) => {
   const [buyerData, setBuyerData] = useState({ name:'', phone:'', email:'' });
 
   const handleInputValue = ({ name, value }) => {
     setBuyerData({ ...buyerData, [name]: value })
-  };
-
-  const handleCheckout = (buyerData) => {
-    const day = new Date()
-    const today = `${day.getDate()}/${day.getMonth()+1}/${day.getFullYear()}`
-    const objOrder = {
-      buyerData,
-      date: today,
-      items: cart,
-      total
-    }
-    console.log(objOrder)
   };
 
   return(
@@ -58,7 +46,7 @@ const CheckoutForm = ({ cart, total }) => {
             required
           />
         </div>
-        <button type='submit'className='violet-btn form-btn' onClick={() => handleCheckout(buyerData)}>Enviar</button>
+        <button type='submit'className='violet-btn form-btn' onClick={() => AddOrder(buyerData)}>Enviar</button>
       </form>
   )
 }

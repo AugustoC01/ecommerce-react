@@ -1,0 +1,23 @@
+.emptyCart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 20rem;
+  padding: 2rem;
+  border: solid 0.2rem var(--green-color);
+  border-radius: 0 2rem;
+}
+
+.emptyCart-title {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.emptyCart-img {
+  width: 12rem;
+  margin: 0 0 1rem;    
+}
+
+.emptyCart-btn {
+  margin: 0 12rem;
+}

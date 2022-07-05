@@ -26,6 +26,7 @@ li {
     border: solid var(--violet-color);
     background-color: var(--violet-color);
     border-radius: 1rem;
+    font-family: inherit;
 }
 
 .violet-btn:hover {
@@ -44,8 +45,3 @@ body {
   --green-color: #4BF80F;
   --grey-color: #616A6B;
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
