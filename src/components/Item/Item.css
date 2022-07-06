@@ -4,11 +4,11 @@
     justify-content: space-around;
     align-items: center;
     background-color: #FFFFFF;
-    box-shadow: 5px 5px 15px var(--violet-color);
+    box-shadow: 1rem 1rem 1.5rem var(--violet-color);
 }
 
 .card-container:hover {
-    box-shadow: 5px 5px 15px var(--green-color);
+    box-shadow: 1rem 1rem 1.5rem var(--green-color);
 }
 
 .card-info {
@@ -35,4 +35,8 @@
 .card-btn {
     text-transform: none;
     padding: 0.1rem 0.3rem;
+}
+
+.out-of-stock {
+    display: none;
 }

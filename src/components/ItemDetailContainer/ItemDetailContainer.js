@@ -1,36 +1,24 @@
 import './ItemDetailContainer.css'
-import { useState, useEffect } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { getProduct } from '../../services/firebase/firestore'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+import { useAsync } from '../../hooks/useAsync'
 
 import { getDoc, doc } from "firebase/firestore";
 import { db } from '../../services/firebase';
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(true)
-
     const { productId } = useParams()
-    useEffect(() => {
-        const docRef = doc(db, 'products', productId)
+    const { isLoading, data, error } = useAsync(() => getProduct(productId), [productId])
 
-        getDoc(docRef).then(doc => {
-            const firebaseProduct = { id: doc.id, ...doc.data()}
-            setProduct(firebaseProduct)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-    }, [productId])
+    if (isLoading) return <LoadingSpinner/>
 
-    if (loading) return <LoadingSpinner/>
+    if(error) return <h1>Hubo un error</h1>
 
     return(
-        <>
-            <ItemDetail {...product}/>
-        </>
+        <ItemDetail {...data}/>
     )
 }
 

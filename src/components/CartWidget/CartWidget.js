@@ -1,10 +1,9 @@
 import "./CartWidget.css";
-import { useContext } from "react";
-import CartContext from "../../Context/CartContext";
+import { useCart } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { getItemsQuantity } = useContext(CartContext)
+  const { getItemsQuantity } = useCart()
   const itemsQuantity = getItemsQuantity()
 
   if (itemsQuantity === 0) return

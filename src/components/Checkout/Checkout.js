@@ -1,18 +1,18 @@
 import './Checkout.css'
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
-import EmptyCart from '../EmptyCart/EmptyCart';
-import CartContext from '../../Context/CartContext';
-import NotificationContext from '../../notification/Notification';
+import EmptyMsg from '../EmptyMsg/EmptyMsg';
+import { useCart } from '../../Context/CartContext';
+import { useNotification } from '../../notification/Notification'
 
-import { addDoc, collection, updateDoc, doc, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore';
+import { addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore';
 import { db } from '../../services/firebase/index'
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false)
-  const { cart, totalToPay, clearCart } = useContext(CartContext)
-  const setNotification = useContext(NotificationContext)
+  const { cart, totalToPay, clearCart } = useCart()
+  const setNotification = useNotification()
 
 const handleCheckout = (buyerData) => {
   setLoading(true)
@@ -59,17 +59,16 @@ const handleCheckout = (buyerData) => {
       clearCart()
       setNotification(
         'success', 
-        `Su orden se genero correctamente.
-         El id de su orden es: ${id}`,
-        'https://c.tenor.com/J8IE5IfN3ocAAAAC/kikicat-kikiapp.gif',
-        5
+        `Su orden se genero correctamente. El id de su orden es: ${id}`,
+        'https://c.tenor.com/Rho9PlHA0ZQAAAAi/kikicat-kikiapp.gif',
+        8
       )
     }).catch(error => {
       if(error.type === 'out_of_stock') {
         setNotification(
           'error', 
           'Hay productos que no tienen stock',
-          'https://c.tenor.com/jBJAcvRVPfAAAAAC/kikicat-kikiapp.gif',
+          'https://c.tenor.com/WOwfrVTrn9wAAAAi/kikiapp-kikicat.gif',
           3
         )
       } else {
@@ -84,7 +83,7 @@ const handleCheckout = (buyerData) => {
     return <LoadingSpinner />
   }
 
-  if(cart.length === 0) return <EmptyCart />
+  if(cart.length === 0) return <EmptyMsg message={'El carrito esta vacio...'} img={'https://c.tenor.com/TzCy1obiigsAAAAi/kikicat-kikiapp.gif'}/>
 
   return (
     <div className='checkout-container'>

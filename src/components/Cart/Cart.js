@@ -1,14 +1,13 @@
 import './Cart.css'
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from '../../Context/CartContext';
+import { useCart } from '../../Context/CartContext';
 import ItemCart from '../ItemCart/ItemCart';
-import EmptyCart from '../EmptyCart/EmptyCart';
+import EmptyMsg from '../EmptyMsg/EmptyMsg';
 
 const Cart = () => {
-    const { cart, totalToPay, clearCart } = useContext(CartContext)
+    const { cart, totalToPay, clearCart } = useCart()
 
-    if(cart.length === 0) return <EmptyCart />
+    if(cart.length === 0) return <EmptyMsg message={'El carrito esta vacio...'} img={'https://c.tenor.com/TzCy1obiigsAAAAi/kikicat-kikiapp.gif'}/>
 
     return(
         <div>

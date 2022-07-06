@@ -29,6 +29,9 @@ nav {
     font-size: 1.2rem;
     text-transform: uppercase;
     color: #FFFFFF;
+    border-bottom: #FFFFFF;
+    border-bottom-width: 0.2rem;
+    border-bottom-style: solid;
 }
 
 .btn-nav:hover, .btn-nav-act:hover {

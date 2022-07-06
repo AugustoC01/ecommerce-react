@@ -1,14 +1,14 @@
 import './Notification.css'
-import { useState, createContext } from 'react';
+import { useState, createContext, useContext } from 'react';
 
 const Notification = ({ message, severity, image }) => {
   const title = severity === 'error' ? 'Oops!' : 'Mision cumplida!'
-  const link = severity === 'error' ? '/cart' : '/'
+  const className = severity === 'error' ? 'notification error' : 'notification'
 
   if(message === '') return
 
   return(
-    <div className='notification'>
+    <div className={className}>
       <img src={image} alt='notification-img' className='notification-img'/>
       <h1 className='notification-title'>{ title }</h1>
       <h2 className='notification-message'>{ message }</h2>
@@ -25,7 +25,7 @@ export const NotificationProvider = ({ children }) => {
     image: ''
   })
 
-  const setNotification = (sev, msg, img, timeout) => {
+  const setNotification = (sev, msg, img, timeout = 5) => {
     setMsgConfig({ severity: sev, message: msg, image: img })
     setTimeout(() => {
       setMsgConfig({ ...msgConfig, message: ''})
@@ -40,4 +40,6 @@ export const NotificationProvider = ({ children }) => {
   )
 }
 
-export default NotificationContext
+export const useNotification = () => {
+  return useContext(NotificationContext)
+}

@@ -27,6 +27,7 @@ li {
     background-color: var(--violet-color);
     border-radius: 1rem;
     font-family: inherit;
+    cursor: default;
 }
 
 .violet-btn:hover {

@@ -1,44 +1,31 @@
 import './ItemListContainer.css';
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { getProducts } from '../../services/firebase/firestore';
 import ItemList from '../ItemList/ItemList';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+import EmptyMsg from '../EmptyMsg/EmptyMsg';
+import { useAsync } from '../../hooks/useAsync';
 
-import { getDocs, collection, query, where } from "firebase/firestore";
-import { db } from '../../services/firebase';
-
-const ItemListContainer = (props) => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-
+const ItemListContainer = () => {
   const { categoryId } = useParams()
-
-  useEffect(() => {
-    setLoading(true)
-
-    const collectionRef = categoryId ? (
-        query(collection(db, 'products'), where('category', '==', categoryId) )
-    ) : (collection(db, 'products'))
-
-    getDocs(collectionRef).then(response => {
-      const firebaseProducts = response.docs.map(doc => {
-        return { id: doc.id, ...doc.data()}
-      })
-      setProducts(firebaseProducts)
-    }).catch(error => {
-      console.log(error)
-    }).finally(() => {
-      setLoading(false)
-    })
-  }, [categoryId])
-
-  if(loading) return <LoadingSpinner />
+  const { isLoading, data, error } = useAsync(() => getProducts(categoryId), [categoryId])
   
+  if(isLoading) return <LoadingSpinner />
+
+  if(error) return <h1>Hubo un error</h1>
+  
+  const emptyCategory = () => {
+    let outOfStock = false
+    data.forEach(prod => { 
+      outOfStock = prod.stock === 0 ? true : false })
+    return outOfStock
+  }
+
   return(
     <div className='itemList-container'>
-      {products.length > 0 
-        ? <ItemList products={products} />
-        : <h1>No hay productos</h1>}
+      {emptyCategory()
+        ? <EmptyMsg message={'No hay productos'} img={'https://c.tenor.com/LeAXiJBHqaMAAAAi/kikicat-kikiapp.gif'} />
+        : <ItemList products={data} />}
     </div>
   )
 }

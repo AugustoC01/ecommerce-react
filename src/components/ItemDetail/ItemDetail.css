@@ -19,7 +19,7 @@
 }
 
 .item-img {
-    width: 30vw;
+    width: 25vw;
     object-fit: contain;
 }
 
@@ -56,10 +56,24 @@
     margin: auto;
 }
 
+.item-added-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem;
+    align-items: center;
+}
+
+.item-added-info {
+    font-size: 0.9rem;
+}
+
 .link-cart {
     font-size: 0.9rem;
     text-transform: none;
     padding: 0.1rem;
-    margin: 3rem 2.5rem;
-    cursor: default;
+}
+
+.item-out-stock {
+    margin: 2rem 0;
 }

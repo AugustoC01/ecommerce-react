@@ -1,9 +1,11 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
 
-const Item = ({ id, name, img, price }) => {
+const Item = ({ id, name, img, price, stock }) => {
+    const className = stock === 0 ? 'out-of-stock' : 'card-container'
+
     return(
-        <li className='card-container'>
+        <li className={className}>
             <img src={img} alt={name} className='card-img'/>
             <div className='card-info'>
                 <h1 className='card-name'>{name}</h1>
