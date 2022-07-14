@@ -1,43 +1,62 @@
 nav {
-    height: 10vh;
-    width: 100%;
-    background-color: var(--violet-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  height: 10vh;
+  background-color: var(--violet-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .categories {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .title-ecom {
-    color: #ffff;
-    text-transform: uppercase;
+  color: #ffff;
+  text-transform: uppercase;
+}
+
+.icon-ecom {
+  display: none;
 }
 
 .btn-nav {
-    margin: 0 0.1rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: var(--green-color);
+  margin: 0 0.1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--green-color);
 }
 
 .btn-nav-act {
-    margin: 0 1rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    border-bottom: #FFFFFF;
-    border-bottom-width: 0.2rem;
-    border-bottom-style: solid;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-bottom: #ffffff;
+  border-bottom-width: 0.2rem;
+  border-bottom-style: solid;
 }
 
-.btn-nav:hover, .btn-nav-act:hover {
-    color: #000000;
+.btn-nav:hover,
+.btn-nav-act:hover {
+  color: #000000;
 }
 
-.title-ecom, .btn-nav, .cartImg {
-    cursor: pointer;
+.title-ecom,
+.btn-nav,
+.cartImg {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .categories {
+    gap: 0.5rem;
+  }
+  .title-ecom {
+    display: none;
+  }
+  .icon-ecom {
+    display: initial;
+    width: 2.5rem;
+  }
 }

@@ -1,9 +1,16 @@
 .list-container {
-    margin: 1rem 0;
-    gap: 2rem;
-    display: grid;
-    grid-auto-rows: 20rem;
-    grid-template-columns: repeat(3, 15rem);
-    justify-content: center;
+  margin: 1rem 0;
+  gap: clamp(0.5rem, 1rem, 2rem);
+  display: grid;
+  grid-auto-rows: 23rem;
+  grid-template-columns: repeat(3, 15rem);
+  justify-content: center;
 }
 
+@media screen and (max-width: 800px) {
+  .list-container {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15rem);
+  }
+}

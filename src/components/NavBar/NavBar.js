@@ -16,15 +16,19 @@ const NavBar = () => {
     <nav>
       <Link to='/'>
         <h3 className='title-ecom'>Aincrad System</h3>
+        <img src='icon.png' className='icon-ecom' alt='icon' />
       </Link>
-      <div className='categories'> 
-        {navBarCategories.map((cat) => 
-          (<NavLink to={`/category/${cat}`} key={cat} className={({ isActive }) =>
-            isActive 
-              ? 'btn-nav-act'
-              : 'btn-nav'
-            }>{cat}</NavLink>
-          ))}
+      <div className='categories'>
+        {navBarCategories.map((category) => (
+          <NavLink
+            to={`/category/${category}`}
+            key={category}
+            className={({ isActive }) =>
+              isActive ? 'btn-nav-act' : 'btn-nav'
+            }>
+            {category}
+          </NavLink>
+        ))}
       </div>
       <div className='cart'>
         <CartWidget />

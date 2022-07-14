@@ -20,14 +20,14 @@ li {
 /*    FIN RESET    */
 
 .violet-btn {
-    text-transform: uppercase;
-    color: #FFFFFF;
-    padding: 0.3rem 0.3rem;
-    border: solid var(--violet-color);
-    background-color: var(--violet-color);
-    border-radius: 1rem;
-    font-family: inherit;
-    cursor: default;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.3rem 0.3rem;
+  border: solid var(--violet-color);
+  background-color: var(--violet-color);
+  border-radius: 1rem;
+  font-family: inherit;
+  cursor: default;
 }
 
 .violet-btn:hover {
@@ -38,11 +38,11 @@ li {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #E5E8E8;
+  background-color: #e5e8e8;
 }
 
-:root{
-  --violet-color: #7D3C98;
-  --green-color: #4BF80F;
-  --grey-color: #616A6B;
+:root {
+  --violet-color: #7d3c98;
+  --green-color: #4bf80f;
+  --grey-color: #616a6b;
 }

@@ -1,9 +1,7 @@
-import './LoadingSpinner.css'
+import './LoadingSpinner.css';
 
 const LoadingSpinner = () => {
-    return(
-        <div className='loading-spinner'></div>
-    )
-}
+  return <div className='loading-spinner'></div>;
+};
 
-export default LoadingSpinner
+export default LoadingSpinner;

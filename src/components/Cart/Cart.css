@@ -1,20 +1,27 @@
 .cart-title {
-    font-size: 2rem;
-    margin: 1rem;
+  font-size: 2rem;
+  margin: 1rem;
 }
 
 .cart-container {
-    display: flex;
-    flex-direction: column;
-    margin: 1.5rem 4rem;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 4rem;
+  gap: 1rem;
 }
 
 .cart-total {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.clear-btn, .checkout-btn {
-    margin: 1rem;
-    font-size: 0.8rem;
+.clear-btn,
+.checkout-btn {
+  margin: 1rem;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+  .cart-container {
+    margin: 0.5rem;
+  }
 }

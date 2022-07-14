@@ -1,5 +1,8 @@
 # Ecommerce
+
 ## Modelo de comercio online con React y Firebase
+
+![userflow](./userflow.gif)
 
 ## Contenido
 
@@ -8,7 +11,8 @@
 
 ## ¿Que es esto?
 
-Este repositorio contiene los archivos de una tienda online, aun en desarrollo, llevada a cabo mediante la implementacion de React y Firebase.
+Este repositorio contiene los archivos de una tienda online llevada a cabo mediante la implementación de React y Firebase.
+En la ruta principal '/' puedes encontrar la lista de todos los artículos, desde el navbar puedes filtrar por categoría, ruta '/categoryId'. Seleccionando un articulo, accedes a la ruta '/itemId'. Por último la ruta '/cart' muestra los artículos en el carrito y desde ahí puedes confirmar la compra, ruta '/checkout'
 
 ## Instalación
 
@@ -23,6 +27,9 @@ $ npm install
 $ npm start
 ```
 
+## Variables de entorno
+
+See .env.example for an example.
 
 ## License
 

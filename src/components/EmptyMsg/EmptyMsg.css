@@ -1,10 +1,10 @@
 .empty-container {
-  height: 45vh;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin: 5rem 20rem;
+  margin: 5rem 10rem;
   padding: 2rem;
   border: solid 0.2rem var(--green-color);
   border-radius: 0 2rem;
@@ -16,10 +16,13 @@
 }
 
 .empty-img {
-  width: 12rem;
-  margin: 0 0 1rem;    
+  width: 30%;
+  margin: 0 0 1rem;
 }
 
-.empty-btn {
-  margin: 0 12rem;
+@media screen and (max-width: 800px) {
+  .empty-container {
+    margin: 4rem 5rem;
+    padding: 1rem;
+  }
 }

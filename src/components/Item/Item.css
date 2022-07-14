@@ -1,42 +1,42 @@
 .card-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #FFFFFF;
-    box-shadow: 1rem 1rem 1.5rem var(--violet-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 1rem 1rem 1.5rem var(--violet-color);
 }
 
 .card-container:hover {
-    box-shadow: 1rem 1rem 1.5rem var(--green-color);
+  box-shadow: 1rem 1rem 1.5rem var(--green-color);
 }
 
 .card-info {
-    height: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .card-img {
-    height: 10rem;
-    width: 15rem;
-    object-fit: contain;
+  height: 10rem;
+  width: 15rem;
+  object-fit: contain;
 }
 
 .card-name {
-    font-size: 2.5vh;
+  font-size: 2.5vh;
 }
 
 .card-prc {
-    font-size: 3vh;
+  font-size: 3vh;
 }
 
 .card-btn {
-    text-transform: none;
-    padding: 0.1rem 0.3rem;
+  text-transform: none;
+  padding: 0.1rem 0.3rem;
 }
 
 .out-of-stock {
-    display: none;
+  display: none;
 }
