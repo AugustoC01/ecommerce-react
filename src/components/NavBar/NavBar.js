@@ -16,7 +16,7 @@ const NavBar = () => {
     <nav>
       <Link to='/'>
         <h3 className='title-ecom'>Aincrad System</h3>
-        <img src='icon.png' className='icon-ecom' alt='icon' />
+        <img src='images/icon.png' className='icon-ecom' alt='icon' />
       </Link>
       <div className='categories'>
         {navBarCategories.map((category) => (
