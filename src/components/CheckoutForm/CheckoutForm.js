@@ -12,8 +12,13 @@ const CheckoutForm = ({ AddOrder }) => {
     setBuyerData({ ...buyerData, [name]: value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    AddOrder(buyerData);
+  };
+
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form onSubmit={handleSubmit}>
       <div className='checkout-input-container'>
         <img src='/images/id-card.png' alt='icon' className='form-icon' />
         <input
@@ -53,7 +58,7 @@ const CheckoutForm = ({ AddOrder }) => {
       <button
         type='submit'
         className='violet-btn form-btn'
-        onClick={() => AddOrder(buyerData)}>
+        onClick={() => handleSubmit}>
         Enviar
       </button>
     </form>
